@@ -12,6 +12,11 @@ import com.cjh.ex25_branch.domain.StudentTest;
 @Mapper
 public interface StudentMapperTest {
 	
+	@Insert("INSERT INTO student(NAME, email, age) \r\n" + " "
+			+ " 	VALUES (#{name}, #{email}, #{age})")
+	@Options(useGeneratedKeys = true, keyProperty = "id")
+	int insert(StudentTest student);
+	
 	@Select("SELECT * FROM student ORDER BY #{id} DESC")
 	List<StudentTest> findAll();
 
@@ -30,11 +35,5 @@ public interface StudentMapperTest {
 //
 //	@Delete("DELETE FROM student WHERE id = #{id}")
 //	void delete(Long id);
-//
-	@Insert("INSERT INTO student(NAME, email, age) \r\n" + " "
-			+ " 	VALUES (#{name}, #{email}, #{age})")
-	@Options(useGeneratedKeys = true, keyProperty = "id")
-	int insert(StudentTest student);
-	
 	
 }

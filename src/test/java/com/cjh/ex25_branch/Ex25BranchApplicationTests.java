@@ -1,4 +1,4 @@
-package com.cjh;
+package com.cjh.ex25_branch;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
